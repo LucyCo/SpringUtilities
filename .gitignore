@@ -34,3 +34,4 @@ build/
 
 ### Auth files ###
 !**/src/main/java/lucyexercises/YoutubeSearch/auth.json
+
