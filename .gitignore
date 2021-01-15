@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Auth files ###
+!**/src/main/java/lucyexercises/YoutubeSearch/auth.json
