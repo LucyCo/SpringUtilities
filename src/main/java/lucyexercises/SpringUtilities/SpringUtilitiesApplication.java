@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 @SpringBootApplication
 public class SpringUtilitiesApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringUtilitiesApplication.class, args);
+	public static void runApp() {
+		SpringApplication.run(SpringUtilitiesApplication.class);
 	}
 
 	@GetMapping("/testRequestGet")
