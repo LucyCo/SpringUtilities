@@ -22,7 +22,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.security.GeneralSecurityException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -43,6 +42,7 @@ public class SearchEngine {
      * This is the directory that will be used under the user's home directory where OAuth tokens will be stored.
      */
     private static final String CREDENTIALS_DIRECTORY = ".oauth-credentials";
+    public static final int MAX_RESULTS = 1;
     YouTube youtubeService = null;
 
     /**
@@ -88,9 +88,8 @@ public class SearchEngine {
     }
 
     /**
-     * Call function to create API service object. Define and
-     * execute API request. Print API response.
-     *
+     * Calls Youtube api search method with given query term and authentication values
+     * returns null if the queryTerm is empty
      */
     public YoutubeVideo SearchByQueryTerm(String queryTerm, AuthValues authVals)
             throws IOException, NoAuthKeyFoundException {
@@ -102,11 +101,15 @@ public class SearchEngine {
         // Define and execute the API request
         YouTube.Search.List request = youtubeService.search()
                 .list(Arrays.asList(new String[]{"id"}));
+        request.setMaxResults(Long.valueOf(MAX_RESULTS));
         request.setKey(authVals.getApiKey());
         request.setQ(queryTerm);
         SearchListResponse response = request.execute();
 
-        ArrayList<SearchResult> items = (ArrayList<SearchResult>) response.get("items");
+        List<SearchResult> items = response.getItems();
+        if (items.isEmpty()) {
+            return null;
+        }
         ResourceId rscId = (ResourceId) items.get(0).getId();
         String vidId = rscId.getVideoId();
         YoutubeVideo vid = getVideoDetailsFromId(vidId, authVals);

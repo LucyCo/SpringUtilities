@@ -9,7 +9,9 @@ public class YoutubeVideo {
     public String channelTitle;
     public String description;
 
-    public YoutubeVideo() {}
+    public YoutubeVideo() {
+        this.title = "";
+    }
 
     public YoutubeVideo(String videoId) {
         this.videoId = videoId;
