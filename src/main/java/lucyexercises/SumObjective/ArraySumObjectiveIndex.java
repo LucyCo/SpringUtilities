@@ -3,7 +3,7 @@ package lucyexercises.SumObjective;
 import java.util.Iterator;
 import java.util.List;
 
-public class ArraySumObjective {
+public class ArraySumObjectiveIndex {
 
     public boolean isSumObjectiveAchieved(List<int[]> list) {
         if (list == null || list.isEmpty()) {

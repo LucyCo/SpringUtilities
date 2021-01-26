@@ -1,6 +1,6 @@
 package lucyexercises.TestSumObjective;
 
-import lucyexercises.SumObjective.ArraySumObjective;
+import lucyexercises.SumObjective.ArraySumObjectiveIndex;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ArraySumObjectiveTest {
+public class ArraySumObjectiveIndexTest {
 
-    ArraySumObjective calc = new ArraySumObjective();
+    ArraySumObjectiveIndex calc = new ArraySumObjectiveIndex();
 
     @Test
     void testIsSumObjectiveAchieved_positiveCases() {
