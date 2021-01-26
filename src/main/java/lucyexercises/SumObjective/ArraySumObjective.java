@@ -80,5 +80,5 @@ public class ArraySumObjective {
         }
     }
 
-    class ObjectiveFailedExpection extends Exception {}
+    class ObjectiveFailedExpection extends Exception { }
 }

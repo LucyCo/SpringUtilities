@@ -50,16 +50,6 @@ public class ArraySumObjectiveTest {
     }
 
     @Test
-    void testIsSumObjectiveAchieved_ListEmpty() {
-        Assertions.assertFalse(calc.isSumObjectiveAchieved(new ArrayList<int[]>(){}));
-    }
-
-    @Test
-    void testIsSumObjectiveAchieved_ListNull() {
-        Assertions.assertFalse(calc.isSumObjectiveAchieved(null));
-    }
-
-    @Test
     void testIsSumObjectiveAchieved_EmptyOneArray() {
         int[] array1 = new int[]{3,4,-5,2,3};
         int[] array2 = new int[]{};
@@ -84,5 +74,15 @@ public class ArraySumObjectiveTest {
         int[] array3 = new int[]{0,0,0,0,0,0,0};
         List<int[]> listArrays = Arrays.asList(array1, array2, array3);
         Assertions.assertTrue(calc.isSumObjectiveAchieved(listArrays));
+    }
+
+    @Test
+    void testIsSumObjectiveAchieved_ListEmpty() {
+        Assertions.assertFalse(calc.isSumObjectiveAchieved(new ArrayList<int[]>(){}));
+    }
+
+    @Test
+    void testIsSumObjectiveAchieved_ListNull() {
+        Assertions.assertFalse(calc.isSumObjectiveAchieved(null));
     }
 }
